@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="no">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Leik</title>
+    </head>
+    <body>
+          <!----------------------- Meny -------------------------->
+
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Leik</a></li>
+                    <li><a href="favoritter.html">Favoritter</a></li>
+                    <li><a href="om.html">Om oss</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>  
+               <!-------------------- Leke generator ------------------->
+            <div class="generator" id="generator">
+              <form id="leik-form">
+                <fieldset>
+                    <legend>Antall Barn</legend>
+                 <!-------------- Radio knapper for antall barn ------------------->
+
+                    <input type="radio" id="en" name="antall" value="1">
+                    <label for="en">1 Barn</label>
+
+                    <input type="radio" id="to-tre" name="antall" value="2-3">
+                    <label for="to-tre">2-3 Barn</label>
+
+                    <input type="radio" id="fire-seks" name="antall" value="4-6">
+                    <label for="fire-seks">4-6 Barn</label>
+
+                    <input type="radio" id="mange" name="antall" value="7+">
+                    <label for="mange">7+ Barn</label>
+                </fieldset>
+
+                <!-------------- Alder-felt genereres her dynamisk med JavaScript ------------------->
+
+                <fieldset>
+                    <legend>Miljø</legend>
+                      <!-------------- Radio knapper for miljø ------------------->
+
+                    <input type="radio" id="inne" name="sted" value="inne">
+                    <label for="inne">Inne</label>
+
+                    <input type="radio" id="ute" name="sted" value="ute">
+                    <label for="ute">Ute</label>
+
+                    <input type="radio" id="skog" name="sted" value="skog">
+                    <label for="skog">Skog</label>
+
+                    <input type="radio" id="strand" name="sted" value="strand">
+                    <label for="strand">Strand</label>
+
+                    <input type="radio" id="sno" name="sted" value="sno">
+                    <label for="sno">Snø</label>              
+                </fieldset>
+
+                <!--------------------- Utstyr ------------------->
+                <label for="utstyr">Utstyr (valgfritt)</label>
+                <input type="text" id="utstyr" name="utstyr" placeholder="F.eks. ball, spade">
+
+                <!--------------------- generer knapp ------------------->
+                <button type="submit">Klar.. ferdig.. LEIK!</button>
+
+              </form>
+            </div>
+
+
+        </main>
+
+        <footer>
+
+        </footer>
+
+    </body>
+</html>
