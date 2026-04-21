@@ -1,0 +1,71 @@
+
+/* =============================
+   VARIABLER
+   ============================= */
+:root {
+    --farge-bakgrunn: #f0f7f0;
+    --farge-overflate: #e8dcc8;
+    --farge-gronn: #5a8a5a;
+    --farge-blaa: #a8c8e8;
+    --farge-rosa: #d4a090;
+    --farge-tekst: #333333;
+}
+
+/* =============================
+   GRUNNSTIL
+   ============================= */
+body {
+    background-color: var(--farge-bakgrunn);
+    color: var(--farge-tekst);
+}
+
+header {
+    background-color: var(--farge-overflate);
+}
+
+/* =============================
+   NAVIGASJON
+   ============================= */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+
+nav a {
+    color: var(--farge-tekst);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: var(--farge-gronn);
+}
+
+/* =============================
+   GENERATOR
+   ============================= */
+.generator {
+    max-width: 444px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--farge-overflate);
+    border-radius: 12px;
+}
+
+fieldset {
+    border: 2px solid var(--farge-rosa);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    max-width: 444px;
+    text-align: center;
+}
+
+legend {
+    padding: 0 0.5rem;
+    font-weight: bold;
+    color: var(--farge-gronn);
+}
