@@ -139,3 +139,46 @@ button:hover {
     background-color: var(--farge-gronn);
     cursor: pointer;
 }
+
+
+/* =============================
+   KONTAKTSKJEMA
+   ============================= */
+
+.skjema-felt {
+    display: flex;
+    flex-direction: column; /* label over input */
+    margin-bottom: 1rem;
+}
+
+input[type="email"],
+textarea {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 2px solid var(--farge-rosa);
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--farge-bakgrunn);
+}
+
+.kontakt-boks {
+    max-width: 666px;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--farge-overflate);
+    border-radius: 12px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: var(--farge-gronn); 
+    outline: none; 
+}
+
+.kontakt-boks input[type="text"],
+.kontakt-boks input[type="email"],
+.kontakt-boks textarea {
+    width: 100%;
+     
+}
