@@ -17,6 +17,7 @@
 body {
     background-color: var(--farge-bakgrunn);
     color: var(--farge-tekst);
+    font-family: 'Nunito', sans-serif;
 }
 
 header {
