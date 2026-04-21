@@ -2,6 +2,10 @@
 /* =============================
    VARIABLER
    ============================= */
+* {
+    box-sizing: border-box;
+}
+
 :root {
     --farge-bakgrunn: #f0f7f0;
     --farge-overflate: #e8dcc8;
@@ -50,10 +54,12 @@ nav a:hover {
    ============================= */
 .generator {
     max-width: 444px;
+    width: 90%;
     margin: 2rem auto;
     padding: 2rem;
     background-color: var(--farge-overflate);
     border-radius: 12px;
+    box-sizing: border-box;
 }
 
 fieldset {
@@ -61,8 +67,11 @@ fieldset {
     border-radius: 8px;
     padding: 1rem;
     margin-bottom: 1rem;
-    max-width: 444px;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; 
+    gap: 0.5rem; 
 }
 
 legend {
@@ -71,8 +80,20 @@ legend {
     color: var(--farge-gronn);
 }
 
+                        /* holder radio-knapp og tekst sammen */
+.radio-valg {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
 input[type="radio"] {
     cursor: pointer;
+}
+
+label {
+    cursor: pointer;
+    white-space: nowrap; /* hindrer tekstbrekking */
 }
 
 /* =============================
