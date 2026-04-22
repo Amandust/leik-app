@@ -87,8 +87,14 @@ skjema.addEventListener('submit', function(e) {
     const antall = antallValgt.value;
     const sted = stedValgt.value;
 
-    console.log('Antall:', antall);
-    console.log('Aldre:', aldre);
-    console.log('Sted:', sted);
-    console.log('Utstyr:', utstyr);
+    // Kall API-funksjonen
+    console.log('Sender til API...');
+    
+    hentLekforslag(antall, aldre, sted, utstyr)
+        .then(function(resultat) {
+            console.log('Svar fra AI:', resultat);
+        })
+        .catch(function(feil) {
+            console.log('Feil:', feil);
+        });
 });
