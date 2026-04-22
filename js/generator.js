@@ -6,8 +6,8 @@ async function hentLekforslag(antall, aldre, sted, utstyr) {
         'i aldrene ' + aldre.join(', ') + ' år. ' +
         'De er ' + sted + '. ' +
         (utstyr ? 'Tilgjengelig utstyr: ' + utstyr + '. ' : '') +
-        'Svar på norsk. For hvert forslag, skriv: ' +
-        'NAVN: [navn] BESKRIVELSE: [2-3 setninger] TRENGER: [utstyr eller ingenting]';
+        'Svar på norsk uten markdown eller stjerner. For hvert forslag, bruk nøyaktig dette formatet:\n' +
+        'NAVN: [navn]\nBESKRIVELSE: [2-3 setninger]\nTRENGER: [utstyr eller ingenting]\n---';
 
     // Sender forespørsel til API
     const respons = await fetch('https://api.anthropic.com/v1/messages', {
@@ -26,7 +26,6 @@ async function hentLekforslag(antall, aldre, sted, utstyr) {
     });
 
     const data = await respons.json();
-    console.log('API svar:', data);
     return data.content[0].text;
 }
 
@@ -35,22 +34,52 @@ function visResultater(tekst) {
     const resultater = document.getElementById('resultater');
     const liste = document.getElementById('resultater-liste');
     
-    // Tøm listen først
     liste.innerHTML = '';
     
-    // Del opp teksten på ---
     const forslag = tekst.split('---');
     
     forslag.forEach(function(enkeltForslag) {
         if (enkeltForslag.trim() === '') return;
-        
+
+        // Hent navn, beskrivelse og trenger
+        const navnMatch = enkeltForslag.match(/NAVN:\s*(.+)/);
+        const beskrivelseMatch = enkeltForslag.match(/BESKRIVELSE:\s*(.+)/);
+        const trengMatch = enkeltForslag.match(/TRENGER:\s*(.+)/);
+
+        const navn = navnMatch ? navnMatch[1].trim() : '';
+        const beskrivelse = beskrivelseMatch ? beskrivelseMatch[1].trim() : '';
+        const trenger = trengMatch ? trengMatch[1].trim() : '';
+
         const li = document.createElement('li');
         li.className = 'resultat-kort';
-        li.innerHTML = '<p>' + enkeltForslag.trim() + '</p>';
+        li.innerHTML = 
+            '<h3>' + navn + '</h3>' +
+            '<p>' + beskrivelse + '</p>' +
+            '<p><strong>Trenger:</strong> ' + trenger + '</p>' +
+            '<button onclick="lagreFavoritt(\'' + navn + '\', \'' + beskrivelse + '\', \'' + trenger + '\')">' +
+            '⭐ Lagre favoritt</button>';
         liste.appendChild(li);
     });
     
-    // Vis seksjonen
     resultater.hidden = false;
     resultater.scrollIntoView({ behavior: 'smooth' });
+}
+
+// Lagrer et forslag som favoritt i localStorage
+function lagreFavoritt(navn, beskrivelse, trenger) {
+    
+    // Hent eksisterende favoritter
+    const favoritter = JSON.parse(localStorage.getItem('favoritter') || '[]');
+    
+    // Sjekk om den allerede er lagret
+    const finnes = favoritter.some(function(f) { return f.navn === navn; });
+    if (finnes) {
+        alert('Dette forslaget er allerede lagret!');
+        return;
+    }
+    
+    // Legg til ny favoritt
+    favoritter.push({ navn: navn, beskrivelse: beskrivelse, trenger: trenger });
+    localStorage.setItem('favoritter', JSON.stringify(favoritter));
+    alert('Lagret som favoritt! ⭐');
 }
