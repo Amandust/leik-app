@@ -26,5 +26,31 @@ async function hentLekforslag(antall, aldre, sted, utstyr) {
     });
 
     const data = await respons.json();
-console.log('API svar:', data);
-return data.content[0].text;}
+    console.log('API svar:', data);
+    return data.content[0].text;
+}
+
+// Viser resultatene på siden
+function visResultater(tekst) {
+    const resultater = document.getElementById('resultater');
+    const liste = document.getElementById('resultater-liste');
+    
+    // Tøm listen først
+    liste.innerHTML = '';
+    
+    // Del opp teksten på ---
+    const forslag = tekst.split('---');
+    
+    forslag.forEach(function(enkeltForslag) {
+        if (enkeltForslag.trim() === '') return;
+        
+        const li = document.createElement('li');
+        li.className = 'resultat-kort';
+        li.innerHTML = '<p>' + enkeltForslag.trim() + '</p>';
+        liste.appendChild(li);
+    });
+    
+    // Vis seksjonen
+    resultater.hidden = false;
+    resultater.scrollIntoView({ behavior: 'smooth' });
+}

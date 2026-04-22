@@ -92,9 +92,10 @@ skjema.addEventListener('submit', function(e) {
     
     hentLekforslag(antall, aldre, sted, utstyr)
         .then(function(resultat) {
-            console.log('Svar fra AI:', resultat);
+            visResultater(resultat);
         })
         .catch(function(feil) {
             console.log('Feil:', feil);
+            alert('Noe gikk galt. Prøv igjen!');
         });
 });
