@@ -132,6 +132,16 @@ label {
     white-space: nowrap;
 }
 
+/* dynamisk alder-checkbox */
+#alder-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
 /* =============================
    UTSTYR
    ============================= */
