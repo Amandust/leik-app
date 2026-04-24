@@ -1,59 +1,83 @@
-/* =============================
-   VARIABLER
-   ============================= */
+/* =============================================
+   LEIK – GLOBAL STYLESHEET
+   Farger, layout og komponenter
+   ============================================= */
+
+
+/* =============================================
+   1. RESET OG VARIABLER
+   Globale innstillinger og fargepalett
+   ============================================= */
+
 * {
-    box-sizing: border-box;
+    box-sizing: border-box; /* padding og border regnes inni elementet */
 }
 
 :root {
-    --farge-bakgrunn: #f0f7f0;
-    --farge-overflate: #e8dcc8;
-    --farge-gronn: #5a8a5a;
-    --farge-blaa: #a8c8e8;
-    --farge-rosa: #d4a090;
-    --farge-tekst: #333333;
+    /* Farger */
+    --farge-bakgrunn: #f0f7f0;    /* lys grønnlig bakgrunn */
+    --farge-overflate: #e8dcc8;   /* varm beige til kort og bokser */
+    --farge-gronn: #5a8a5a;       /* hovedfarge – naturlig grønn */
+    --farge-blaa: #a8c8e8;        /* aksent – ikke i bruk ennå */
+    --farge-rosa: #d4a090;        /* aksent – terrakotta/rosa */
+    --farge-tekst: #333333;       /* mørk tekst */
 }
 
-/* =============================
-   GRUNNSTIL
-   ============================= */
+
+/* =============================================
+   2. GRUNNSTIL
+   Gjelder hele siden (body, skrift, bakgrunn)
+   ============================================= */
+
 body {
     background-color: var(--farge-bakgrunn);
     color: var(--farge-tekst);
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito', sans-serif; /* leken og rund skrifttype */
+    margin: 0;
+    padding: 0;
 }
+
+main {
+    padding: 1rem; 
+}
+
+
+/* =============================================
+   3. NAVIGASJON
+   Header og menylenker øverst på siden
+   ============================================= */
 
 header {
     background-color: var(--farge-overflate);
 }
 
-/* =============================
-   NAVIGASJON
-   ============================= */
 nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+    list-style: none;       /* fjerner kulepunkter */
+    display: flex;          /* legger lenkene side om side */
+    justify-content: center; /* sentrerer dem */
+    gap: 1rem;              /* luft mellom lenkene */
     padding: 1rem;
 }
 
 nav a {
     color: var(--farge-tekst);
-    text-decoration: none;
+    text-decoration: none;  /* fjerner understreking */
     font-weight: bold;
 }
 
 nav a:hover {
-    color: var(--farge-gronn);
+    color: var(--farge-gronn); /* grønn farge når man holder over */
 }
 
-/* =============================
-   STEG-FORKLARING
-   ============================= */
+
+/* =============================================
+   4. STEG-FORKLARING
+   Tre bokser over generatoren som forklarer appen
+   ============================================= */
+
 .steg-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: row;    /* horisontal på desktop */
     gap: 1rem;
     max-width: 666px;
     width: 90%;
@@ -64,7 +88,7 @@ nav a:hover {
     background-color: var(--farge-overflate);
     border-radius: 12px;
     padding: 0.75rem;
-    flex: 1;
+    flex: 1;                /* alle boksene like brede */
     text-align: center;
 }
 
@@ -79,16 +103,19 @@ nav a:hover {
     margin: 0;
 }
 
-/* Vertikal på mobil */
+/* Vertikal på mobil – under 600px stables boksene */
 @media (max-width: 600px) {
     .steg-container {
         flex-direction: column;
     }
 }
 
-/* =============================
-   GENERATOR
-   ============================= */
+
+/* =============================================
+   5. GENERATOR
+   Hovedskjemaet der brukeren fyller inn info
+   ============================================= */
+
 .generator {
     max-width: 666px;
     width: 90%;
@@ -98,6 +125,7 @@ nav a:hover {
     border-radius: 12px;
 }
 
+/* Ramme rundt grupper av felt (antall barn, miljø) */
 fieldset {
     border: 2px solid var(--farge-rosa);
     border-radius: 8px;
@@ -105,18 +133,19 @@ fieldset {
     margin-bottom: 1rem;
     text-align: center;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;        /* bryter til ny linje hvis det ikke er plass */
     justify-content: center;
     gap: 0.5rem;
 }
 
+/* Tittelen som sitter på rammelinjen */
 legend {
     padding: 0 0.5rem;
     font-weight: bold;
     color: var(--farge-gronn);
 }
 
-/* holder radio-knapp og tekst sammen */
+/* Holder radio-knapp og tekst sammen som ett par */
 .radio-valg {
     display: flex;
     align-items: center;
@@ -124,15 +153,15 @@ legend {
 }
 
 input[type="radio"] {
-    cursor: pointer;
+    cursor: pointer; /* hånd-ikon når man holder over */
 }
 
 label {
     cursor: pointer;
-    white-space: nowrap;
+    white-space: nowrap; /* hindrer at teksten brekker */
 }
 
-/* dynamisk alder-checkbox */
+/* Alder-checkboxes genereres dynamisk av JavaScript */
 #alder-container {
     display: flex;
     flex-wrap: wrap;
@@ -142,9 +171,12 @@ label {
     margin-bottom: 1rem;
 }
 
-/* =============================
-   UTSTYR
-   ============================= */
+
+/* =============================================
+   6. UTSTYR-FELT
+   Tekstfeltet der brukeren skriver inn utstyr
+   ============================================= */
+
 label[for="utstyr"] {
     display: block;
     text-align: center;
@@ -164,9 +196,12 @@ input[type="text"] {
     background-color: var(--farge-bakgrunn);
 }
 
-/* =============================
-   KNAPP
-   ============================= */
+
+/* =============================================
+   7. KNAPPER
+   Alle knapper på siden
+   ============================================= */
+
 button {
     background-color: var(--farge-rosa);
     color: var(--farge-tekst);
@@ -177,16 +212,27 @@ button {
     display: block;
     width: 80%;
     font-weight: bold;
+    font-family: 'Nunito', sans-serif;
 }
 
 button:hover {
     background-color: var(--farge-gronn);
+    color: var(--farge-bakgrunn); /* lys tekst på mørk bakgrunn */
     cursor: pointer;
 }
 
-/* =============================
-   RESULTATER
-   ============================= */
+/* Slett-knapp rød på hover */
+#favoritter-liste button:hover {
+    background-color: #c0392b; /* rød */
+    border-color: #c0392b;
+    color: white;
+}
+
+
+/* =============================================
+   8. RESULTATER
+   Kortene som vises etter AI-generering
+   ============================================= */
 
 #resultater {
     max-width: 666px;
@@ -206,19 +252,24 @@ button:hover {
     gap: 1rem;
 }
 
+/* Hvert resultatkort */
 .resultat-kort {
     background-color: var(--farge-overflate);
     border-radius: 12px;
     padding: 1.5rem;
-    border-left: 4px solid var(--farge-gronn);
+    border: 2px solid var(--farge-gronn); 
 }
 
-/* =============================
-   KONTAKTSKJEMA
-   ============================= */
+
+/* =============================================
+   9. KONTAKTSKJEMA
+   Skjemaet på kontakt-siden
+   ============================================= */
+
+/* Wrapper rundt hvert felt (label + input) */
 .skjema-felt {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* label over input */
     margin-bottom: 1rem;
 }
 
@@ -231,6 +282,7 @@ textarea {
     background-color: var(--farge-bakgrunn);
 }
 
+/* Boksen rundt hele kontaktskjemaet */
 .kontakt-boks {
     max-width: 666px;
     width: 90%;
@@ -240,15 +292,59 @@ textarea {
     border-radius: 12px;
 }
 
+/* Grønn ramme når brukeren klikker i et felt */
 input[type="text"]:focus,
 input[type="email"]:focus,
 textarea:focus {
     border-color: var(--farge-gronn);
-    outline: none;
+    outline: none; /* fjerner standard blå outline */
 }
 
+/* Feltene i kontaktskjemaet tar full bredde */
 .kontakt-boks input[type="text"],
 .kontakt-boks input[type="email"],
 .kontakt-boks textarea {
     width: 100%;
+}
+
+
+/* =============================================
+   10. FAVORITTER
+   Siden som viser lagrede lekforslag
+   ============================================= */
+
+#favoritter-container {
+    max-width: 666px;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#favoritter-container h1 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#favoritter-liste {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+/* Grønn kant på favoritt-kort */
+#favoritter-liste .resultat-kort {
+    border: 2px solid var(--farge-gronn);
+    cursor: pointer;
+    transition: border-color 0.2s ease; /* myk overgang */
+}
+
+/* Rosa kant når man holder over */
+#favoritter-liste .resultat-kort:hover {
+    border-color: var(--farge-rosa);
 }
