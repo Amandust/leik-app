@@ -53,9 +53,18 @@ Appen bruker [Anthropic Claude API](https://console.anthropic.com). Du trenger e
 
 ## Lighthouse-score
 
+### Mobil
 | Side | Performance | Accessibility | Best Practices | SEO |
 |---|---|---|---|---|
 | index.html | 99 | 100 | 100 | 100 |
 | favoritter.html | 94 | 100 | 100 | 100 |
 | om.html | 99 | 100 | 100 | 100 |
+| kontakt.html | 100 | 100 | 100 | 100 |
+
+### Desktop
+| Side | Performance | Accessibility | Best Practices | SEO |
+|---|---|---|---|---|
+| index.html | 100 | 100 | 100 | 100 |
+| favoritter.html | 77 | 100 | 100 | 100 |
+| om.html | 100 | 100 | 100 | 100 |
 | kontakt.html | 100 | 100 | 100 | 100 |
