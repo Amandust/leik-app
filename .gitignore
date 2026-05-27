@@ -140,3 +140,5 @@ vite.config.ts.timestamp-*
 
 # API-nøkkel - skal IKKE lastes opp til GitHub
 js/config.js
+
+.vscode/

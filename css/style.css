@@ -317,6 +317,22 @@ textarea:focus {
 .kontakt-boks input[type="email"],
 .kontakt-boks textarea {
     width: 100%;
+    background-color: var(--farge-bakgrunn);
+}
+
+/* Feilmelding i kontaktskjema */
+.feil {
+    color: var(--farge-gronn);
+    font-size: 0.85rem;
+    text-align: center;
+}
+
+/* Takkmelding etter innsending */
+#takk-melding {
+    text-align: center;
+    color: var(--farge-gronn);
+    font-weight: bold;
+    padding: 0.5rem;
 }
 
 
