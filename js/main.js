@@ -10,10 +10,8 @@ if (alderContainer) {
     antallKnapper.forEach(function(knapp) {
         knapp.addEventListener('change', function() {
             
-            // Tøm container først
             alderContainer.innerHTML = '<p>Velg alder(e):</p>';
             
-            // Lag tall 1-10 som checkboxes
             for (let i = 1; i <= 10; i++) {
                 const div = document.createElement('div');
                 div.className = 'radio-valg';
@@ -23,7 +21,6 @@ if (alderContainer) {
                 alderContainer.appendChild(div);
             }
 
-            // Hent alle alder-checkboxes
             const checkboxer = alderContainer.querySelectorAll('input[type="checkbox"]');
 
             checkboxer.forEach(function(cb) {
@@ -74,13 +71,28 @@ if (skjema) {
         const antall = antallValgt.value;
         const sted = stedValgt.value;
 
-        console.log('Sender til API...');
-        
+        // Vis lasteindikator
+        const laster = document.getElementById('laster');
+        laster.hidden = false;
+
+        // Deaktiver knappen mens vi venter
+        const knapp = document.querySelector('button[type="submit"]');
+        knapp.disabled = true;
+        knapp.textContent = 'Genererer...';
+
         hentLekforslag(antall, aldre, sted, utstyr)
             .then(function(resultat) {
+                // Skjul lasteindikator og aktiver knappen igjen
+                laster.hidden = true;
+                knapp.disabled = false;
+                knapp.textContent = 'Klar.. ferdig.. LEIK!';
                 visResultater(resultat);
             })
             .catch(function(feil) {
+                // Skjul lasteindikator og aktiver knappen igjen
+                laster.hidden = true;
+                knapp.disabled = false;
+                knapp.textContent = 'Klar.. ferdig.. LEIK!';
                 console.log('Feil:', feil);
                 alert('Noe gikk galt. Prøv igjen!');
             });

@@ -229,8 +229,20 @@ button:hover {
 }
 
 
+/* =============================
+   8. LASTEINDIKATOR
+   ============================= */
+
+#laster {
+    text-align: center;
+    padding: 1rem;
+    color: var(--farge-gronn);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
 /* =============================================
-   8. RESULTATER
+   9. RESULTATER
    Kortene som vises etter AI-generering
    ============================================= */
 
@@ -262,7 +274,7 @@ button:hover {
 
 
 /* =============================================
-   9. KONTAKTSKJEMA
+   10. KONTAKTSKJEMA
    Skjemaet på kontakt-siden
    ============================================= */
 
@@ -309,7 +321,7 @@ textarea:focus {
 
 
 /* =============================================
-   10. FAVORITTER
+   11. FAVORITTER
    Siden som viser lagrede lekforslag
    ============================================= */
 
