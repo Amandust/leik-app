@@ -17,7 +17,7 @@ function visFavoritter() {
         const li = document.createElement('li');
         li.className = 'resultat-kort';
         li.innerHTML = 
-            '<h3>' + favoritt.navn + '</h3>' +
+            '<h2>' + favoritt.navn + '</h2>' +
             '<p>' + favoritt.beskrivelse + '</p>' +
             '<p><strong>Trenger:</strong> ' + favoritt.trenger + '</p>' +
             '<button onclick="slettFavoritt(' + index + ')">🗑️ Slett</button>';
