@@ -45,9 +45,9 @@
                <!-------------------- Leke generator ------------------->
             <div class="generator" id="generator">
               <form id="leik-form">
+
                 <fieldset>
                     <legend>Antall Barn</legend>
-
                  <!-------------- Radio knapper for antall barn ------------------->
                     <div class="radio-valg">
                         <input type="radio" id="en" name="antall" value="1">
@@ -70,9 +70,11 @@
                     </div>
 
                 </fieldset>
+                <span class="feil" id="antall-feil"></span>
 
                 <!-------------- Alder-felt genereres her dynamisk med JavaScript ------------------->
                 <div id="alder-container"></div>
+                <span class="feil" id="alder-feil"></span>
 
 
                 <fieldset>
@@ -104,6 +106,7 @@
                         <label for="sno">Snø</label> 
                     </div>             
                 </fieldset>
+                <span class="feil" id="sted-feil"></span>
 
                 <!--------------------- Utstyr ------------------->
                 <label for="utstyr">Utstyr (valgfritt)</label>

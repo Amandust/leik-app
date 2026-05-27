@@ -52,6 +52,10 @@ if (skjema) {
         
         e.preventDefault();
 
+        document.getElementById('antall-feil').textContent = '';
+        document.getElementById('alder-feil').textContent = '';
+        document.getElementById('sted-feil').textContent = '';
+
         const antallValgt = document.querySelector('input[name="antall"]:checked');
         const stedValgt = document.querySelector('input[name="sted"]:checked');
         const utstyr = document.getElementById('utstyr').value;
@@ -59,12 +63,17 @@ if (skjema) {
         const aldre = Array.from(aldreValgt).map(function(cb) { return cb.value; });
 
         if (!antallValgt) {
-            alert('Velg antall barn!');
-            return;
+           document.getElementById('antall-feil').textContent = '🌿 Velg antall barn.';
+           return;
+        }
+
+        if (aldre.length === 0) {
+           document.getElementById('alder-feil').textContent = '🌿 Velg minst én alder.';
+           return;
         }
 
         if (!stedValgt) {
-            alert('Velg et miljø!');
+            document.getElementById('sted-feil').textContent = '🌿 Velg et miljø.';
             return;
         }
 
