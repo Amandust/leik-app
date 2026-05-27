@@ -380,3 +380,41 @@ textarea:focus {
 #favoritter-liste .resultat-kort:hover {
     border-color: var(--farge-rosa);
 }
+
+/* =============================================
+   12. OM OSS
+   ============================================= */
+
+.om-boks {
+    max-width: 666px;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: var(--farge-overflate);
+    border-radius: 12px;
+}
+
+.om-boks h1, .om-boks h2 {
+    color: var(--farge-gronn);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.om-boks p {
+    margin-bottom: 42px;
+    padding: 0 22px;
+    text-align: center;
+}
+
+/* =============================================
+   13. FOOTER
+   ============================================= */
+
+footer {
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    background-color: var(--farge-overflate);
+    color: var(--farge-tekst);
+    font-size: 0.85rem;
+}
