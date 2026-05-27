@@ -366,6 +366,7 @@ textarea:focus {
     gap: 1rem;
     margin-top: 1rem;
     width: 100%;
+    padding: 0;
 }
 
 /* Grønn kant på favoritt-kort */

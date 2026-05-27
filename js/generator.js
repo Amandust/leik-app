@@ -80,7 +80,7 @@ function visResultater(tekst) {
         const knapp = document.createElement('button');
         knapp.textContent = '⭐ Lagre favoritt';
         knapp.addEventListener('click', function() {
-            lagreFavoritt(navn, beskrivelse, trenger);
+            lagreFavoritt(navn, beskrivelse, trenger, knapp);
         });
         li.appendChild(knapp);
         liste.appendChild(li);
@@ -97,20 +97,26 @@ function visResultater(tekst) {
 // Lagrer og henter favoritter i nettleseren
 // =============================================
 
-function lagreFavoritt(navn, beskrivelse, trenger) {
+
+function lagreFavoritt(navn, beskrivelse, trenger, knapp) {
     
-    // Henter eksisterende favoritter fra localStorage
     const favoritter = JSON.parse(localStorage.getItem('favoritter') || '[]');
     
-    // Sjekker om forslaget allerede er lagret
     const finnes = favoritter.some(function(f) { return f.navn === navn; });
     if (finnes) {
-        alert('Dette forslaget er allerede lagret!');
+        knapp.textContent = '⭐ Allerede lagret';
+        knapp.style.backgroundColor = '#888';
+        knapp.style.borderColor = '#888';
         return;
     }
     
-    // Legger til det nye forslaget og lagrer
     favoritter.push({ navn: navn, beskrivelse: beskrivelse, trenger: trenger });
     localStorage.setItem('favoritter', JSON.stringify(favoritter));
-    alert('Lagret som favoritt! ⭐');
+    
+    // Endre knappen til "Lagret"
+    knapp.textContent = '⭐ Lagret!';
+    knapp.style.backgroundColor = 'var(--farge-gronn)';
+    knapp.style.borderColor = 'var(--farge-gronn)';
+    knapp.style.color = 'white';
+    knapp.disabled = true;
 }
