@@ -3,6 +3,18 @@
 // Håndterer API-kall og visning av resultater
 // =============================================
 
+// =============================================
+// KLASSE: Lekforslag
+// Representerer ett lekforslag med navn, beskrivelse og utstyr
+// =============================================
+
+class Lekforslag {
+    constructor(navn, beskrivelse, trenger) {
+        this.navn = navn;
+        this.beskrivelse = beskrivelse;
+        this.trenger = trenger;
+    }
+}
 
 // =============================================
 // DEL 1: API-KALL
@@ -111,7 +123,7 @@ function lagreFavoritt(navn, beskrivelse, trenger, knapp) {
         return;
     }
     
-    favoritter.push({ navn: navn, beskrivelse: beskrivelse, trenger: trenger });
+    favoritter.push(new Lekforslag(navn, beskrivelse, trenger));
     localStorage.setItem('favoritter', JSON.stringify(favoritter));
     
     // Endre knappen til "Lagret"
