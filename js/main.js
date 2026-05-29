@@ -53,6 +53,7 @@ if (skjema) {
         document.getElementById('antall-feil').textContent = '';
         document.getElementById('alder-feil').textContent = '';
         document.getElementById('sted-feil').textContent = '';
+        document.getElementById('api-feil').hidden = true;
 
         const antallValgt = document.querySelector('input[name="antall"]:checked');
         const stedValgt = document.querySelector('input[name="sted"]:checked');
@@ -100,7 +101,7 @@ if (skjema) {
                 laster.hidden = true;
                 knapp.disabled = false;
                 knapp.textContent = 'Klar.. ferdig.. LEIK!';
-                alert('Noe gikk galt. Prøv igjen!');
+                document.getElementById('api-feil').hidden = false;
             });
     });
 }

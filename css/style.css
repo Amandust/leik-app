@@ -260,6 +260,19 @@ button:hover {
     100% { content: ''; }
 }
 
+/* API-feilmelding */
+#api-feil {
+    max-width: 666px;
+    width: 90%;
+    margin: 1rem auto;
+    padding: 1rem;
+    background-color: #fdf0ef;
+    border: 2px solid var(--farge-rosa);
+    border-radius: 12px;
+    text-align: center;
+    color: var(--farge-tekst);
+}
+
 /* =============================================
    9. RESULTATER
    Kortene som vises etter AI-generering
