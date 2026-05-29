@@ -1,5 +1,3 @@
-console.log('leik er klar!')
-
 // Henter skjemaet fra HTML ved hjelp av id-en 'leik-form'
 const skjema = document.getElementById('leik-form');
 const antallKnapper = document.querySelectorAll('input[name="antall"]');
@@ -102,7 +100,6 @@ if (skjema) {
                 laster.hidden = true;
                 knapp.disabled = false;
                 knapp.textContent = 'Klar.. ferdig.. LEIK!';
-                console.log('Feil:', feil);
                 alert('Noe gikk galt. Prøv igjen!');
             });
     });
