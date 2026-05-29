@@ -77,14 +77,15 @@ function visResultater(tekst) {
             '<p><strong>Trenger:</strong> ' + trenger + '</p>';
 
         // Lager lagre-knappen separat for å unngå problemer med spesialtegn
-        const knapp = document.createElement('button');
-        knapp.textContent = '⭐ Lagre favoritt';
-        knapp.addEventListener('click', function() {
-            lagreFavoritt(navn, beskrivelse, trenger, knapp);
+            const knapp = document.createElement('button');
+            knapp.textContent = '⭐ Lagre favoritt';
+            knapp.setAttribute('aria-label', 'Lagre ' + navn + ' som favoritt');
+            knapp.addEventListener('click', function() {
+               lagreFavoritt(navn, beskrivelse, trenger, knapp);
+            });
+            li.appendChild(knapp);
+            liste.appendChild(li);
         });
-        li.appendChild(knapp);
-        liste.appendChild(li);
-    });
     
     // Viser resultat-seksjonen og scroller ned til den
     resultater.hidden = false;

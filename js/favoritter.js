@@ -20,7 +20,7 @@ function visFavoritter() {
             '<h2>' + favoritt.navn + '</h2>' +
             '<p>' + favoritt.beskrivelse + '</p>' +
             '<p><strong>Trenger:</strong> ' + favoritt.trenger + '</p>' +
-            '<button onclick="slettFavoritt(' + index + ')">🗑️ Slett</button>';
+            '<button onclick="slettFavoritt(' + index + ')" aria-label="Slett ' + favoritt.navn + ' fra favoritter">🗑️ Slett</button>';
         liste.appendChild(li);
     });
 }

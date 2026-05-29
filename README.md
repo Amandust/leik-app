@@ -51,13 +51,20 @@ Appen bruker [Anthropic Claude API](https://console.anthropic.com). Du trenger e
 - Kontaktskjemaet lagrer ikke meldinger (ingen backend)
 - Favoritter slettes hvis nettleserdata tømmes
 
+## Ressurser og kilder
+
+- Claude AI (Anthropic) – brukt som læringsverktøy og sparringspartner underveis
+- Forelesninger og kursmateriale fra Oslo Nye Fagskole
+- [Anthropic API-dokumentasjon](https://docs.anthropic.com) – for API-integrasjon
+- Chrome DevTools (F12) – brukt til debugging, testing og Lighthouse-analyse
+
 ## Lighthouse-score
 
 ### Mobil
 | Side | Performance | Accessibility | Best Practices | SEO |
 |---|---|---|---|---|
 | index.html | 99 | 100 | 100 | 100 |
-| favoritter.html | 94 | 100 | 100 | 100 |
+| favoritter.html | 92 | 100 | 100 | 100 |
 | om.html | 99 | 100 | 100 | 100 |
 | kontakt.html | 100 | 100 | 100 | 100 |
 

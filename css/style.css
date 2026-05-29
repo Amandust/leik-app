@@ -307,6 +307,11 @@ button:hover {
     margin-bottom: 1rem;
 }
 
+.kontakt-boks h1 {
+    text-align: center;
+    color: var(--farge-gronn);
+}
+
 input[type="email"],
 textarea {
     padding: 0.5rem;
@@ -347,6 +352,10 @@ textarea:focus {
     color: var(--farge-gronn);
     font-size: 0.85rem;
     text-align: center;
+}
+
+.kontakt-boks button {
+    margin-top: 2rem;
 }
 
 /* Takkmelding etter innsending */
