@@ -223,7 +223,7 @@ button:hover {
 
 /* Slett-knapp rød på hover */
 #favoritter-liste button:hover {
-    background-color: #c0392b; /* rød */
+    background-color: #c0392b; 
     border-color: #c0392b;
     color: white;
 }
@@ -239,6 +239,12 @@ button:hover {
     color: var(--farge-gronn);
     font-weight: bold;
     font-size: 1.2rem;
+}
+
+.laster-tekst {
+    text-align: center;
+    min-width: 220px; /* holder bredden stabil */
+    display: inline-block;
 }
 
 /* Animerte prikker på lasteindikator */
@@ -412,6 +418,10 @@ textarea:focus {
     color: var(--farge-gronn);
     margin-bottom: 0.5rem;
     text-align: center;
+}
+
+.om-boks h2 {
+    margin-top: 1.5rem;
 }
 
 .om-boks p {
