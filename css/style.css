@@ -273,6 +273,17 @@ button:hover {
     color: var(--farge-tekst);
 }
 
+/* AI-advarsel */
+.ai-advarsel {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--farge-tekst);
+    opacity: 0.7;
+    max-width: 666px;
+    width: 90%;
+    margin: 0 auto;
+}
+
 /* =============================================
    9. RESULTATER
    Kortene som vises etter AI-generering
